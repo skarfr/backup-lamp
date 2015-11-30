@@ -1,6 +1,6 @@
 #!/bin/sh
 
-_now=$(date +"%Y%m%d-%k%M%S")     #used to name dumps files such as: YYYYMMDD-HHMMSS-<dump name>.ext
+_now=$(date +"%Y%m%d-%H%M%S")     #used to name dumps files such as: YYYYMMDD-HHMMSS-<dump name>.ext
 _pathDump="/home/.dump"           #the folder where dumps will be created
 
 _mysqlUser="dump"                 #SQL username. It must have global privileges USAGE: SELECT, LOCK TABLES, EVENT, TRIGGER, SHOW VIEW
