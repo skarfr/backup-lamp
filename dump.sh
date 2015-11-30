@@ -16,15 +16,15 @@ source "$DIR/variables.sh"
 echo "Location:     $_pathDump"
 
 #dump Mysql/Mariadb
-_databases=$(mysql -u $_mysqlUser -p"$_mysqlPassword" -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
+_databases=$(mysql -u "$_mysqlUser" -p"$_mysqlPassword" -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
 
 #we create 1 file per databases
 for _db in $_databases; do
     if [[ "$_db" != "information_schema" ]] && [[ "$_db" != "performance_schema" ]] && [[ "$_db" != "mysql" ]] && [[ "$_db" != _* ]] ; then
         _file="$_pathDump/$_now-$_db.sql"
-        mysqldump -u $_mysqlUser -p"$_mysqlPassword" --databases $_db > $_file
-        tar -czf $_file.tar.gz -C / ${_file#"/"}
-        rm $_file
+        mysqldump -u "$_mysqlUser" -p"$_mysqlPassword" --databases "$_db" > "$_file"
+        tar -czf "$_file".tar.gz -C / ${_file#"/"}
+        rm "$_file"
         echo "Dump Mariadb: $_db DONE"
     fi
 done
