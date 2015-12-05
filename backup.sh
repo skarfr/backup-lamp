@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#check that the user is root, or exit
-if [[ $EUID -ne 0 ]]; then
-  echo "You must be a root user" 2>&1
-  exit 1
-fi
-
 #load config.conf & tools.inc
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source "$DIR/config.conf"
