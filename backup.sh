@@ -54,7 +54,7 @@ fi
 
 #delete previous dumps
 if [ "$_deleteOlderDumps" = 1 ]; then
-    find $_pathDump/* -mtime +$_deleteOlderThan -type f -delete
+    find $_pathDump/ -type f -mtime +$_deleteOlderThan -name '*.tar*' -delete
     echo "Clean Dumps:  >$_deleteOlderThan days DONE"
 fi
 
