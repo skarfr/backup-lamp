@@ -23,7 +23,7 @@ This script uses few commands:
 * Setup a cronjob (crontab -e) to run it everyday
 
 ### Important
-By default, the encryption, the "Single Files dump" and the backup are disabled.
+By default, the encryption, the "Single Files dump", the "delete dumps older than x days" & the backup to a remote server are disabled.
 You must review carefully & edit accordingly to your needs the file config.conf before running the ./backup.sh script
 
 ### Disclaimer
